@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Double-click Event</title>
+<script src="../jquery.min.js"></script>
+<style type="text/css">
+    p{
+        padding: 20px;
+        font: 20px sans-serif;
+        background: khaki;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("p").dblclick(function(){
+        $(this).slideUp();
+    });
+});
+</script>
+</head>
+<body>
+    <p>Double-click on me and I'll disappear.</p>
+    <p>Double-click on me and I'll disappear.</p>
+    <p>Double-click on me and I'll disappear.</p>
+</body>
+</html>                            

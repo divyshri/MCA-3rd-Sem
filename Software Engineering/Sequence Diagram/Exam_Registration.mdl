@@ -1,0 +1,1376 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.3.0407.2800"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5D6654710011"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5D6654710013"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Mechanism @1
+		logical_models 	(list unit_reference_list
+		    (object Object "Student"
+			quid       	"5D665497039B"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5D6654AA010D"
+				supplier   	"System"
+				quidu      	"5D66549A000E"
+				messages   	(list Messages
+				    (object Message "Online Registeration"
+					quid       	"5D6654AA010E"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1"
+					ordinal    	0
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Solve Exam, Check Result and Correct Exam"
+					quid       	"5D665636028F"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"7"
+					ordinal    	8
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"5D6655190137"
+				supplier   	"Exam Controller"
+				quidu      	"5D6654DE031B"
+				messages   	(list Messages
+				    (object Message "Request for Apllication Status"
+					quid       	"5D6655190138"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4"
+					ordinal    	3
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Provide Application Status"
+					quid       	"5D66552902B4"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"ToClientFromSupplier"
+					sequence   	"4.1"
+					ordinal    	4
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Generate Hall Ticket"
+					quid       	"5D665574025C"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"5.1"
+					ordinal    	6
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "System"
+			quid       	"5D66549A000E"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5D6654C00241"
+				supplier   	"System"
+				quidu      	"5D66549A000E"
+				messages   	(list Messages
+				    (object Message "Verify Entered Details"
+					quid       	"5D6654C00242"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2"
+					ordinal    	1
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"5D6654F10119"
+				supplier   	"Exam Controller"
+				quidu      	"5D6654DE031B"
+				messages   	(list Messages
+				    (object Message "Forward Information"
+					quid       	"5D6654F1011A"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"3"
+					ordinal    	2
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"5D6655B400BE"
+				supplier   	"System"
+				quidu      	"5D66549A000E"))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "Exam Controller"
+			quid       	"5D6654DE031B"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5D66555E00AB"
+				supplier   	"Exam Controller"
+				quidu      	"5D6654DE031B"
+				messages   	(list Messages
+				    (object Message "Verify All Details"
+					quid       	"5D66555E00AC"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"5"
+					ordinal    	5
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE)
+		    (object Object "Examinator"
+			quid       	"5D6655A70259"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5D6657AD030F"
+				supplier   	"System"
+				quidu      	"5D66549A000E"
+				messages   	(list Messages
+				    (object Message "Add/Modify Questions and Upload Answers"
+					quid       	"5D6655FB0195"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"6"
+					ordinal    	7
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5D6654710021"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram "Exam_Registration"
+		mechanism_ref 	@1
+		quid       	"5D66548F009C"
+		title      	"Exam_Registration"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object InterObjView "Student" @2
+			location   	(337, 225)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(337, 225)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Student")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D665497039B"
+			width      	300
+			height     	1531
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @3
+			    location   	(337, 383)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @4
+			    location   	(337, 966)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	205
+			    y_coord    	115
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @5
+			    location   	(337, 1071)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	1
+			    y_coord    	-89
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @6
+			    location   	(337, 1306)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @7
+			    location   	(337, 1594)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterObjView "System" @8
+			location   	(1337, 225)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(1337, 225)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"System")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D66549A000E"
+			width      	300
+			height     	1525
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @9
+			    location   	(1337, 383)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @10
+			    location   	(1337, 572)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @11
+			    location   	(1337, 597)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @12
+			    location   	(1337, 772)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @13
+			    location   	(1337, 1476)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @14
+			    location   	(1337, 1594)
+			    line_color 	3342489
+			    InterObjView 	@8
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterObjView "Exam Controller" @15
+			location   	(2277, 231)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@15
+			    location   	(2277, 231)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Exam Controller")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6654DE031B"
+			width      	300
+			height     	1519
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @16
+			    location   	(2277, 311)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @17
+			    location   	(2277, 772)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @18
+			    location   	(2277, 966)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	105
+			    y_coord    	15
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @19
+			    location   	(2277, 1176)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @20
+			    location   	(2277, 1201)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	195
+			    y_coord    	105
+			    Nested     	TRUE))
+		    (object InterObjView "Examinator" @21
+			location   	(2768, 1356)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@21
+			    location   	(2768, 1356)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Examinator")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6655A70259"
+			width      	300
+			height     	394
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @22
+			    location   	(2768, 1436)
+			    line_color 	3342489
+			    InterObjView 	@21
+			    height     	130
+			    y_coord    	40
+			    Nested     	FALSE))
+		    (object InterMessView "Online Registeration" @23
+			location   	(0, 383)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @24
+			    Parent_View 	@23
+			    location   	(836, 339)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6654AA010E"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	420
+			    justify    	0
+			    label      	"Online Registeration"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@8
+			Focus_Src  	@3
+			Focus_Entry 	@9
+			origin     	(352, 383)
+			terminus   	(1321, 383)
+			ordinal    	0)
+		    (object SelfMessView "Verify Entered Details" @25
+			location   	(0, 572)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @26
+			    Parent_View 	@25
+			    location   	(1428, 528)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6654C00242"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	446
+			    justify    	0
+			    label      	"Verify Entered Details"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@8
+			supplier   	@8
+			Focus_Src  	@10
+			Focus_Entry 	@11
+			origin     	(1353, 572)
+			terminus   	(1503, 572)
+			ordinal    	1)
+		    (object InterMessView "Forward Information" @27
+			location   	(0, 772)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @28
+			    Parent_View 	@27
+			    location   	(1806, 728)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6654F1011A"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	408
+			    justify    	0
+			    label      	"Forward Information"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@8
+			supplier   	@15
+			Focus_Src  	@12
+			Focus_Entry 	@17
+			origin     	(1352, 772)
+			terminus   	(2261, 772)
+			ordinal    	2)
+		    (object InterMessView "Request for Apllication Status" @29
+			location   	(0, 966)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @30
+			    Parent_View 	@29
+			    location   	(1306, 922)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6655190138"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	586
+			    justify    	0
+			    label      	"Request for Apllication Status"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@15
+			Focus_Src  	@4
+			Focus_Entry 	@18
+			origin     	(352, 966)
+			terminus   	(2261, 966)
+			ordinal    	3)
+		    (object InterMessView "Provide Application Status" @31
+			location   	(0, 1071)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @32
+			    Parent_View 	@31
+			    location   	(1307, 1116)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D66552902B4"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	526
+			    justify    	0
+			    label      	"Provide Application Status"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@2
+			Focus_Src  	@18
+			Focus_Entry 	@5
+			origin     	(2261, 1071)
+			terminus   	(353, 1071)
+			ordinal    	4)
+		    (object SelfMessView "Verify All Details" @33
+			location   	(0, 1176)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @34
+			    Parent_View 	@33
+			    location   	(2368, 1132)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D66555E00AC"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	344
+			    justify    	0
+			    label      	"Verify All Details"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@15
+			Focus_Src  	@19
+			Focus_Entry 	@20
+			origin     	(2293, 1176)
+			terminus   	(2443, 1176)
+			ordinal    	5)
+		    (object InterMessView "Generate Hall Ticket" @35
+			location   	(0, 1306)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @36
+			    Parent_View 	@35
+			    location   	(1307, 1262)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D665574025C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	422
+			    justify    	0
+			    label      	"Generate Hall Ticket"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@15
+			supplier   	@2
+			Focus_Src  	@20
+			Focus_Entry 	@6
+			origin     	(2261, 1306)
+			terminus   	(353, 1306)
+			ordinal    	6)
+		    (object InterMessView "Add/Modify Questions and Upload Answers" @37
+			location   	(0, 1476)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @38
+			    Parent_View 	@37
+			    location   	(2053, 1432)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6655FB0195"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	832
+			    justify    	0
+			    label      	"Add/Modify Questions and Upload Answers"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@21
+			supplier   	@8
+			Focus_Src  	@22
+			Focus_Entry 	@13
+			origin     	(2752, 1476)
+			terminus   	(1353, 1476)
+			ordinal    	7)
+		    (object InterMessView "Solve Exam, Check Result and Correct Exam" @39
+			location   	(0, 1594)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @40
+			    Parent_View 	@39
+			    location   	(836, 1550)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D665636028F"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	879
+			    justify    	0
+			    label      	"Solve Exam, Check Result and Correct Exam"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@8
+			Focus_Src  	@7
+			Focus_Entry 	@14
+			origin     	(352, 1594)
+			terminus   	(1321, 1594)
+			ordinal    	8)
+		    (object Destruction_Marker @41
+			Parent_View 	@2
+			location   	(337, 1756)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object Destruction_Marker @42
+			Parent_View 	@8
+			location   	(1337, 1750)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object Destruction_Marker @43
+			Parent_View 	@15
+			location   	(2277, 1750)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object Destruction_Marker @44
+			Parent_View 	@21
+			location   	(2768, 1750)
+			line_color 	3342489
+			fill_color 	13434879)))
+	    (object ObjectDiagram "Exam_Registration"
+		mechanism_ref 	@1
+		quid       	"5D6656C403CF"
+		title      	"Exam_Registration"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ObjectView "Student" @45
+			location   	(270, 396)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@45
+			    location   	(189, 345)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	162
+			    justify    	0
+			    label      	"Student")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D665497039B"
+			height     	126
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "System" @46
+			location   	(1544, 396)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@46
+			    location   	(1463, 345)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	162
+			    justify    	0
+			    label      	"System")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D66549A000E"
+			height     	126
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "Exam Controller" @47
+			location   	(1543, 1709)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@47
+			    location   	(1399, 1646)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"Exam Controller")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6654DE031B"
+			width      	306
+			height     	150
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "Examinator" @48
+			location   	(2730, 396)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@48
+			    location   	(2649, 345)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	162
+			    justify    	0
+			    label      	"Examinator")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6655A70259"
+			height     	126
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object LinkSelfView "" @49
+			location   	(1544, 183)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6654C00241"
+			client     	@46
+			supplier   	@46
+			vertices   	(list Points
+			    (1487, 333)
+			    (1601, 333))
+			line_style 	4)
+		    (object LinkSelfView "" @50
+			location   	(1543, 1484)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D66555E00AB"
+			client     	@47
+			supplier   	@47
+			vertices   	(list Points
+			    (1486, 1634)
+			    (1600, 1634))
+			line_style 	4)
+		    (object MessView "" @51
+			location   	(1544, 139)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @52
+			    Parent_View 	@51
+			    location   	(1544, 95)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6654C00242"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Verify Entered Details"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@49
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1484, 139)
+			terminus   	(1604, 139))
+		    (object MessView "" @53
+			location   	(1543, 1440)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @54
+			    Parent_View 	@53
+			    location   	(1543, 1396)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D66555E00AC"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Verify All Details"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@50
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1483, 1440)
+			terminus   	(1603, 1440))
+		    (object LinkView "" @55
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6654AA010D"
+			client     	@45
+			supplier   	@46
+			vertices   	(list Points
+			    (360, 396)
+			    (1453, 396))
+			line_style 	0)
+		    (object MessView "" @56
+			location   	(907, 352)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @57
+			    Parent_View 	@56
+			    location   	(907, 261)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6654AA010E"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Online Registeration"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @58
+			    Parent_View 	@56
+			    location   	(907, 308)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D665636028F"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	879
+			    justify    	0
+			    label      	"Solve Exam, Check Result and Correct Exam"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@55
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(847, 352)
+			terminus   	(967, 352))
+		    (object LinkView "" @59
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6655190137"
+			client     	@45
+			supplier   	@47
+			vertices   	(list Points
+			    (331, 459)
+			    (1470, 1633))
+			line_style 	0)
+		    (object MessView "" @60
+			location   	(933, 1016)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @61
+			    Parent_View 	@60
+			    location   	(965, 986)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6655190138"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	585
+			    justify    	0
+			    label      	"Request for Apllication Status"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@59
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(891, 973)
+			terminus   	(975, 1059))
+		    (object MessView "" @62
+			location   	(870, 1077)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @63
+			    Parent_View 	@62
+			    location   	(839, 1202)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D66552902B4"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	522
+			    justify    	0
+			    label      	"Provide Application Status"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @64
+			    Parent_View 	@62
+			    location   	(839, 1155)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D665574025C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Generate Hall Ticket"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@59
+			pctDist    	0.500000
+			height     	45
+			orientation 	1
+			dir        	-1
+			origin     	(911, 1119)
+			terminus   	(829, 1035))
+		    (object LinkView "" @65
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6654F10119"
+			client     	@46
+			supplier   	@47
+			vertices   	(list Points
+			    (1543, 459)
+			    (1543, 1633))
+			line_style 	0)
+		    (object MessView "" @66
+			location   	(1588, 1046)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @67
+			    Parent_View 	@66
+			    location   	(1633, 1046)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6654F1011A"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Forward Information"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@65
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1588, 986)
+			terminus   	(1588, 1106))
+		    (object LinkView "" @68
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6655B400BE"
+			client     	@46
+			supplier   	@48
+			vertices   	(list Points
+			    (1634, 396)
+			    (2639, 396))
+			line_style 	0)
+		    (object MessView "" @69
+			location   	(2137, 441)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @70
+			    Parent_View 	@69
+			    location   	(2137, 486)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6655FB0195"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	831
+			    justify    	0
+			    label      	"Add/Modify Questions and Upload Answers"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@68
+			pctDist    	0.500000
+			height     	45
+			orientation 	1
+			dir        	-1
+			origin     	(2196, 441)
+			terminus   	(2078, 441))))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5D6654710012"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5D6654710014"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5D6654710018"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5D6654710014"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5D6654710020"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"5D6654710012")
+    process_structure 	(object Processes
+	quid       	"5D6654710015"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5D6654710017"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"5D6654710016"))

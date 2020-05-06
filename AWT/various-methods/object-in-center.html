@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Executing a Function on Resize Event in jQuery</title>
+<script src="../jquery.min.js"></script>
+<style type="text/css">
+    #divobj{
+        
+	height: 200px;
+	width: 200px;
+        position: absolute;
+        background: #f0e68c;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	function objincenter() {
+		var window_height = $(window).height();    
+		var window_width = $(window).width();
+		var obj_height = $('#divobj').height();
+		var obj_width = $('#divobj').width();
+
+
+		$('#divobj').css('top',(window_height / 2)-(obj_height / 2)).css('left',(window_width / 2)-(obj_width / 2));
+	}
+
+	objincenter();
+	$(window).resize(function(){	
+		objincenter();
+	});
+});
+</script>
+</head> 
+<body>
+    <div id="divobj"></div>
+</body>
+</html>                            

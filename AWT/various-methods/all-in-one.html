@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>jQuery in One Example</title>
+	<style type="text/css">
+	.simple{
+		width:200px;
+		text-align:center;
+		border:1px dashed #333;
+		margin:4px;
+		padding:4px;
+		cursor:pointer;
+	}
+	</style>
+	<script src="../jquery.min.js"></script>
+	<script type="text/javascript">
+	// 1. Execute jQuery when document is ready
+	$( document ).ready(function() {
+		
+		// 2. Find an HTML element (all of the below are returning the same element)
+		$("div") //a. return all elements of type div
+		$("#xDiv") // b. return element with id="xDiv"
+		$(".simple") // c. return elements with class="simple"
+		
+		// 3. Modify the appearance of the selected element
+		$("#xDiv").css("background-color","#ffcc00");
+		
+		// 4. Modify element dimensoin
+		$("#xDiv").width('300px');
+		
+		// 5. Change the content
+		$("#xDiv").text("Content changed");
+		
+		// 6. Add event listener (mouseover listener)
+		$("div").mouseover( function() {
+			$("#xDiv").css("color","#0066ff");
+		});
+		$("div").mouseout( function() {
+			$("#xDiv").css("color","#000");
+		});
+		
+		// 7. Add effect (hide effect)
+		$("div").click( function() {
+			$(this).hide();
+		});
+		// 8. Add new element
+		$("body").append($("<div>").text("new HTML div element").addClass("simple"));
+		
+	});
+	</script>
+</head>
+
+<body>
+	<div id="xDiv" class="simple">Simple HTML Element</div>
+</body>
+
+
+</html>

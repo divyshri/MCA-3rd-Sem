@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Executing a Function on Resize Event in jQuery</title>
+<script src="../jquery.min.js"></script>
+<style>
+p {
+color: green;
+}
+div {
+width: 80px;
+height: 80px;
+float: left;
+padding: 10px;
+margin: 10px;
+background-color: yellow;
+}
+</style>
+<script>
+var x=0;
+$(document).ready(function(){
+  $(window).resize(function(){
+    $("span").text(x++);
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Change your window size</p>
+<div>Resized <b> <span>0</span></b> times.</div>
+
+</body>
+</html>
+

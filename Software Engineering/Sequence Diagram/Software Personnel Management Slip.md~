@@ -1,0 +1,1339 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.3.0407.2800"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5D6656770261"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5D6656770263"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5D665677026A"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5D6656770262"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5D6656770264"
+	logical_models 	(list unit_reference_list
+	    (object Mechanism @1
+		logical_models 	(list unit_reference_list
+		    (object Object "EMPLOYEE"
+			quid       	"5D6F7CF80184"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "ADMINISTRATOR"
+			quid       	"5D6F7CF90338"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5D6F7E330283"
+				supplier   	"SOFTWARE SYSTEM"
+				quidu      	"5D6F7CFB0141"
+				messages   	(list Messages
+				    (object Message "Modify Information at Run Reports"
+					quid       	"5D6F7E330284"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4"
+					ordinal    	4
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE)
+		    (object Object "SOFTWARE SYSTEM"
+			quid       	"5D6F7CFB0141"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5D6F7D56024A"
+				supplier   	"EMPLOYEE"
+				quidu      	"5D6F7CF80184"
+				messages   	(list Messages
+				    (object Message "Provide Payslip Genrator System"
+					quid       	"5D6F7D56024B"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"FromClientToSupplier"
+					sequence   	"1"
+					ordinal    	0
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Access and Edit Personal Details"
+					quid       	"5D6F7D7A0201"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"2"
+					ordinal    	1
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Get Information"
+					quid       	"5D6F7DCD0353"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"3"
+					ordinal    	3
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Genrate Records and Performance Reports"
+					quid       	"5D6F7E6802FA"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"FromClientToSupplier"
+					sequence   	"4.1"
+					ordinal    	5
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Provide Information of Current and Previous Projects"
+					quid       	"5D6F7E93019D"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"FromClientToSupplier"
+					sequence   	"5.1"
+					ordinal    	7
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Provide Payroll Slip"
+					quid       	"5D6F7E980398"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"FromClientToSupplier"
+					sequence   	"6.1"
+					ordinal    	9
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Request Information about Current and Previous Projects"
+					quid       	"5D6F80250151"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"5"
+					ordinal    	6
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Request to Generate Payroll Slip"
+					quid       	"5D6F80590312"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"6"
+					ordinal    	8
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"5D6F7DA400C6"
+				supplier   	"DATABASE"
+				quidu      	"5D6F7CFD0054"
+				messages   	(list Messages
+				    (object Message "Calcutate Payroll"
+					quid       	"5D6F7DA400C7"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2.1"
+					ordinal    	2
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE)
+		    (object Object "DATABASE"
+			quid       	"5D6F7CFD0054"
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5D6656770268"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram "Software Personnel Management System"
+		mechanism_ref 	@1
+		quid       	"5D6F7B550132"
+		title      	"Software Personnel Management System"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object InterObjView "EMPLOYEE" @2
+			location   	(503, 225)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(503, 225)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"EMPLOYEE")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CF80184"
+			width      	300
+			height     	1594
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @3
+			    location   	(503, 383)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @4
+			    location   	(503, 587)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @5
+			    location   	(503, 867)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @6
+			    location   	(503, 1116)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @7
+			    location   	(503, 1284)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	205
+			    y_coord    	115
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @8
+			    location   	(503, 1389)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	1
+			    y_coord    	-89
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @9
+			    location   	(503, 1554)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	205
+			    y_coord    	115
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @10
+			    location   	(503, 1659)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	1
+			    y_coord    	-89
+			    Nested     	TRUE))
+		    (object InterObjView "ADMINISTRATOR" @11
+			location   	(2911, 825)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@11
+			    location   	(2911, 825)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	395
+			    justify    	0
+			    label      	"ADMINISTRATOR")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CF90338"
+			width      	413
+			height     	395
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @12
+			    location   	(2911, 905)
+			    line_color 	3342489
+			    InterObjView 	@11
+			    height     	196
+			    y_coord    	106
+			    Nested     	FALSE))
+		    (object InterObjView "SOFTWARE SYSTEM" @13
+			location   	(1691, 247)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@13
+			    location   	(1691, 247)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	482
+			    justify    	0
+			    label      	"SOFTWARE SYSTEM")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CFB0141"
+			width      	500
+			height     	1621
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @14
+			    location   	(1691, 327)
+			    line_color 	3342489
+			    InterObjView 	@13
+			    height     	56
+			    y_coord    	-34
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @15
+			    location   	(1691, 587)
+			    line_color 	3342489
+			    InterObjView 	@13
+			    height     	195
+			    y_coord    	105
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @16
+			    location   	(1691, 867)
+			    line_color 	3342489
+			    InterObjView 	@13
+			    height     	204
+			    y_coord    	114
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @17
+			    location   	(1691, 1011)
+			    line_color 	3342489
+			    InterObjView 	@13
+			    height     	105
+			    y_coord    	15
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @18
+			    location   	(1691, 1284)
+			    line_color 	3342489
+			    InterObjView 	@13
+			    height     	105
+			    y_coord    	15
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @19
+			    location   	(1691, 1554)
+			    line_color 	3342489
+			    InterObjView 	@13
+			    height     	105
+			    y_coord    	15
+			    Nested     	FALSE))
+		    (object InterObjView "DATABASE" @20
+			location   	(2277, 475)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@20
+			    location   	(2277, 475)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"DATABASE")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CFD0054"
+			width      	300
+			height     	396
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @21
+			    location   	(2277, 555)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	197
+			    y_coord    	107
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @22
+			    location   	(2277, 692)
+			    line_color 	3342489
+			    InterObjView 	@20
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE))
+		    (object InterMessView "Provide Payslip Genrator System" @23
+			location   	(0, 383)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @24
+			    Parent_View 	@23
+			    location   	(1097, 339)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7D56024B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	654
+			    justify    	0
+			    label      	"Provide Payslip Genrator System"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@13
+			supplier   	@2
+			Focus_Src  	@14
+			Focus_Entry 	@3
+			origin     	(1675, 383)
+			terminus   	(519, 383)
+			ordinal    	0)
+		    (object InterMessView "Access and Edit Personal Details" @25
+			location   	(0, 587)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @26
+			    Parent_View 	@25
+			    location   	(1096, 543)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7D7A0201"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	659
+			    justify    	0
+			    label      	"Access and Edit Personal Details"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@13
+			Focus_Src  	@4
+			Focus_Entry 	@15
+			origin     	(518, 587)
+			terminus   	(1675, 587)
+			ordinal    	1)
+		    (object InterMessView "Calcutate Payroll" @27
+			location   	(0, 692)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @28
+			    Parent_View 	@27
+			    location   	(1983, 648)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7DA400C7"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	360
+			    justify    	0
+			    label      	"Calcutate Payroll"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@13
+			supplier   	@20
+			Focus_Src  	@15
+			Focus_Entry 	@22
+			origin     	(1706, 692)
+			terminus   	(2261, 692)
+			ordinal    	2)
+		    (object InterMessView "Get Information" @29
+			location   	(0, 867)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @30
+			    Parent_View 	@29
+			    location   	(1096, 823)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7DCD0353"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	336
+			    justify    	0
+			    label      	"Get Information"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@13
+			Focus_Src  	@5
+			Focus_Entry 	@16
+			origin     	(518, 867)
+			terminus   	(1675, 867)
+			ordinal    	3)
+		    (object InterMessView "Modify Information at Run Reports" @31
+			location   	(0, 1011)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @32
+			    Parent_View 	@31
+			    location   	(2293, 956)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E330284"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	663
+			    justify    	0
+			    label      	"Modify Information at Run Reports"
+			    pctDist    	0.507513
+			    height     	56
+			    orientation 	1)
+			line_color 	3342489
+			client     	@11
+			supplier   	@13
+			Focus_Src  	@12
+			Focus_Entry 	@17
+			origin     	(2895, 1011)
+			terminus   	(1707, 1011)
+			ordinal    	4)
+		    (object Destruction_Marker @33
+			Parent_View 	@11
+			location   	(2911, 1220)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object InterMessView "Genrate Records and Performance Reports" @34
+			location   	(0, 1116)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @35
+			    Parent_View 	@34
+			    location   	(1104, 1076)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E6802FA"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	835
+			    justify    	0
+			    label      	"Genrate Records and Performance Reports"
+			    pctDist    	0.493945
+			    height     	41
+			    orientation 	1)
+			line_color 	3342489
+			client     	@13
+			supplier   	@2
+			Focus_Src  	@17
+			Focus_Entry 	@6
+			origin     	(1675, 1116)
+			terminus   	(519, 1116)
+			ordinal    	5)
+		    (object InterMessView "Provide Information of Current and Previous Projects" @36
+			location   	(0, 1389)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @37
+			    Parent_View 	@36
+			    location   	(1097, 1345)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E93019D"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	981
+			    justify    	0
+			    label      	"Provide Information of Current and Previous Projects"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@13
+			supplier   	@2
+			Focus_Src  	@18
+			Focus_Entry 	@8
+			origin     	(1675, 1389)
+			terminus   	(519, 1389)
+			ordinal    	7)
+		    (object InterMessView "Provide Payroll Slip" @38
+			location   	(0, 1659)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @39
+			    Parent_View 	@38
+			    location   	(1107, 1607)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E980398"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	422
+			    justify    	0
+			    label      	"Provide Payroll Slip"
+			    pctDist    	0.491761
+			    height     	53
+			    orientation 	1)
+			line_color 	3342489
+			client     	@13
+			supplier   	@2
+			Focus_Src  	@19
+			Focus_Entry 	@10
+			origin     	(1675, 1659)
+			terminus   	(519, 1659)
+			ordinal    	9)
+		    (object Destruction_Marker @40
+			Parent_View 	@20
+			location   	(2277, 871)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object Destruction_Marker @41
+			Parent_View 	@2
+			location   	(503, 1819)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object Destruction_Marker @42
+			Parent_View 	@13
+			location   	(1691, 1868)
+			line_color 	3342489
+			fill_color 	13434879)
+		    (object InterMessView "Request Information about Current and Previous Projects" @43
+			location   	(0, 1284)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @44
+			    Parent_View 	@43
+			    location   	(1096, 1240)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F80250151"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	1072
+			    justify    	0
+			    label      	"Request Information about Current and Previous Projects"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@13
+			Focus_Src  	@7
+			Focus_Entry 	@18
+			origin     	(518, 1284)
+			terminus   	(1675, 1284)
+			ordinal    	6)
+		    (object InterMessView "Request to Generate Payroll Slip" @45
+			location   	(0, 1554)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @46
+			    Parent_View 	@45
+			    location   	(1096, 1510)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F80590312"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	647
+			    justify    	0
+			    label      	"Request to Generate Payroll Slip"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@13
+			Focus_Src  	@9
+			Focus_Entry 	@19
+			origin     	(518, 1554)
+			terminus   	(1675, 1554)
+			ordinal    	8)))
+	    (object ObjectDiagram "Software Personnel Management System"
+		mechanism_ref 	@1
+		quid       	"5D6F8129017C"
+		title      	"Software Personnel Management System"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ObjectView "EMPLOYEE" @47
+			location   	(303, 412)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@47
+			    location   	(131, 365)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	344
+			    justify    	0
+			    label      	"EMPLOYEE")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CF80184"
+			width      	362
+			height     	119
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "ADMINISTRATOR" @48
+			location   	(353, 1706)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@48
+			    location   	(175, 1668)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	357
+			    justify    	0
+			    label      	"ADMINISTRATOR")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CF90338"
+			width      	375
+			height     	100
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "SOFTWARE SYSTEM" @49
+			location   	(2785, 412)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@49
+			    location   	(2488, 371)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	594
+			    justify    	0
+			    label      	"SOFTWARE SYSTEM")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CFB0141"
+			width      	612
+			height     	106
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "DATABASE" @50
+			location   	(2781, 1698)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@50
+			    location   	(2597, 1660)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	369
+			    justify    	0
+			    label      	"DATABASE")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D6F7CFD0054"
+			width      	387
+			height     	100
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object LinkView "" @51
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6F7E330283"
+			client     	@48
+			supplier   	@49
+			vertices   	(list Points
+			    (446, 1655)
+			    (2682, 465))
+			line_style 	0)
+		    (object MessView "" @52
+			location   	(1544, 1021)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @53
+			    Parent_View 	@52
+			    location   	(1525, 982)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E330284"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	663
+			    justify    	0
+			    label      	"Modify Information at Run Reports"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@51
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1491, 1048)
+			terminus   	(1597, 994))
+		    (object LinkView "" @54
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6F7D56024A"
+			client     	@49
+			supplier   	@47
+			vertices   	(list Points
+			    (2478, 412)
+			    (484, 412))
+			line_style 	0)
+		    (object MessView "" @55
+			location   	(1481, 457)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @56
+			    Parent_View 	@55
+			    location   	(1481, 502)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7D56024B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	653
+			    justify    	0
+			    label      	"Provide Payslip Genrator System"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @57
+			    Parent_View 	@55
+			    location   	(1481, 549)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E6802FA"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	835
+			    justify    	0
+			    label      	"Genrate Records and Performance Reports"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @58
+			    Parent_View 	@55
+			    location   	(1481, 596)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E93019D"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	1001
+			    justify    	0
+			    label      	"Provide Information of Current and Previous Projects"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @59
+			    Parent_View 	@55
+			    location   	(1481, 643)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7E980398"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Provide Payroll Slip"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@54
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1540, 457)
+			terminus   	(1422, 457))
+		    (object MessView "" @60
+			location   	(1481, 368)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @61
+			    Parent_View 	@60
+			    location   	(1481, 183)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7D7A0201"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	659
+			    justify    	0
+			    label      	"Access and Edit Personal Details"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @62
+			    Parent_View 	@60
+			    location   	(1481, 230)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7DCD0353"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Get Information"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @63
+			    Parent_View 	@60
+			    location   	(1481, 277)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F80250151"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	1088
+			    justify    	0
+			    label      	"Request Information about Current and Previous Projects"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			label      	(object SegLabel @64
+			    Parent_View 	@60
+			    location   	(1481, 324)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F80590312"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	647
+			    justify    	0
+			    label      	"Request to Generate Payroll Slip"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@54
+			pctDist    	0.500000
+			height     	45
+			orientation 	1
+			dir        	-1
+			origin     	(1421, 368)
+			terminus   	(1541, 368))
+		    (object LinkView "" @65
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5D6F7DA400C6"
+			client     	@49
+			supplier   	@50
+			vertices   	(list Points
+			    (2784, 465)
+			    (2781, 1647))
+			line_style 	0)
+		    (object MessView "" @66
+			location   	(2828, 1056)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @67
+			    Parent_View 	@66
+			    location   	(2873, 1056)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5D6F7DA400C7"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Calcutate Payroll"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@65
+			pctDist    	0.500000
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(2828, 996)
+			terminus   	(2828, 1116))))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5D6656770264"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5D6656770269"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"5D6656770262")
+    process_structure 	(object Processes
+	quid       	"5D6656770265"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5D6656770267"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"5D6656770266"))
